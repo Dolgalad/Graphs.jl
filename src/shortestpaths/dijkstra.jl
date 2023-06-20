@@ -71,6 +71,7 @@ function dijkstra_shortest_paths(
     g::AbstractGraph,
     srcs::Vector{U},
     distmx::AbstractMatrix{T}=weights(g);
+    dst=nothing,
     allpaths=false,
     trackvertices=false,
 ) where {T<:Real} where {U<:Integer}
@@ -96,6 +97,11 @@ function dijkstra_shortest_paths(
 
     while !isempty(H)
         u = dequeue!(H)
+        if !isnothing(dst)
+            if u == dst
+                break
+            end
+        end
 
         if trackvertices
             push!(closest_vertices, u)
