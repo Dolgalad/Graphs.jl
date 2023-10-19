@@ -249,6 +249,7 @@ export
     yen_k_shortest_paths,
     desopo_pape_shortest_paths,
     bidijkstra_shortest_path,
+    larac_shortest_path,
 
     # centrality
     betweenness_centrality,
@@ -500,6 +501,7 @@ include("shortestpaths/desopo-pape.jl")
 include("shortestpaths/floyd-warshall.jl")
 include("shortestpaths/yen.jl")
 include("shortestpaths/spfa.jl")
+include("shortestpaths/larac.jl")
 include("linalg/LinAlg.jl")
 include("operators.jl")
 include("persistence/common.jl")
