@@ -14,7 +14,7 @@ function path_weight(p, weights)
     return w
 end
 
-function larac_shortest_path(g, src, dst, ub, cost, delay; maxit=100)
+function larac_shortest_path(g, src, dst, ub, cost, delay; maxit=10)
     p_c = shortest_path(g, src, dst, cost)
     p_c_delay = path_weight(p_c, delay)
     if p_c_delay <= ub
@@ -38,6 +38,5 @@ function larac_shortest_path(g, src, dst, ub, cost, delay; maxit=100)
             p_c = r
         end
     end
-    println("Reached max iter")
     return p_d
 end
